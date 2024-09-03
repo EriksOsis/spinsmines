@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.querySelector('.modal-submit');
     const errorMessage = document.querySelector('.modal-error');
 
-    submitButton.addEventListener('click', hideModal);
+    submitButton.addEventListener('click', submitUserId);
 
     function showModal() {
         modal.classList.remove('hide');
