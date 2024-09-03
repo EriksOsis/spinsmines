@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const tile = document.createElement('div');
             tile.classList.add('grid-tile');
             tile.innerHTML = tileSVGs[i % 2]; // Alternate SVGs
-            tile.addEventListener('click', () => revealTile(tile));
             gridContainer.appendChild(tile);
             tiles.push(tile); // Store all tiles in an array for later reference
         }
@@ -145,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     hideErrorMessage();
                     hideModal();
                 } else {
-                    showErrorMessage('Invalid User ID. Try again or create an account.');
+                    showErrorMessage('Invalid User ID or unfinished requirements. Try again or complete all of the requirements.');
                 }
             } catch (error) {
                 console.error('Error:', error.message);
@@ -200,4 +199,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
