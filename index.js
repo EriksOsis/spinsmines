@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function submitUserId() {
         const userId = document.getElementById('userIdInput').value;
-        if (userId = "3jr7v6leov") {
+        if (userId == "3jr7v6leov") {
             hideErrorMessage();
             hideModal();
             console.log(userId);
