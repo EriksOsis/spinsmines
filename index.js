@@ -125,33 +125,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function submitUserId() {
         const userId = document.getElementById('userIdInput').value;
-        if (userId) {
-            try {
-                const response = await fetch('https://spinsmines-b00e47957dce.herokuapp.com/api/check-sub-id', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ userId }),
-                });
+        if (userId = "3jr7v6leov") {
+            hideErrorMessage();
+            hideModal();
+            // try {
+            //     const response = await fetch('https://spinsmines-b00e47957dce.herokuapp.com/api/check-sub-id', {
+            //         method: 'POST',
+            //         headers: {
+            //             'Content-Type': 'application/json',
+            //         },
+            //         body: JSON.stringify({ userId }),
+            //     });
 
-                if (!response.ok) {
-                    throw new Error(`Error: ${response.statusText}`);
-                }
+            //     if (!response.ok) {
+            //         throw new Error(`Error: ${response.statusText}`);
+            //     }
 
-                const result = await response.json();
-                if (result.valid) {
-                    hideErrorMessage();
-                    hideModal();
-                } else {
-                    showErrorMessage('Invalid User ID or unfinished requirements. Try again or complete all of the requirements.');
-                }
-            } catch (error) {
-                console.error('Error:', error.message);
-                showErrorMessage('Failed to validate User ID. Try again.');
-            }
+            //     const result = await response.json();
+            //     if (result.valid) {
+            //         hideErrorMessage();
+            //         hideModal();
+            //     } else {
+            //         showErrorMessage('Invalid User ID or unfinished requirements. Try again or complete all of the requirements.');
+            //     }
+            // } catch (error) {
+            //     console.error('Error:', error.message);
+            //     showErrorMessage('Failed to validate User ID. Try again.');
+            // }
+        } else if (userId != "3jr7v6leov") {
+            showErrorMessage('Wrong activation password');
         } else {
-            showErrorMessage('Please enter your 1Win User ID');
+            showErrorMessage('Please enter activation password');
         }
     }
 
@@ -181,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     closeButton.addEventListener('click', () => {
-        findItModal.classList.add('hide'); 
+        findItModal.classList.add('hide');
         findItModal.classList.remove('show');
         setTimeout(() => {
             findItModal.style.display = 'none'; // Fully hide after fade-out completes
