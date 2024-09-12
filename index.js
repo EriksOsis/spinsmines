@@ -128,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (userId == "3jr7v6leov") {
             hideErrorMessage();
             hideModal();
-            console.log(userId);
             // try {
             //     const response = await fetch('https://spinsmines-b00e47957dce.herokuapp.com/api/check-sub-id', {
             //         method: 'POST',
