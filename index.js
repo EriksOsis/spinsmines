@@ -10,6 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let tiles = [];
     let tilesRevealed = false; // Flag to track if tiles have been revealed
 
+    const userIdInput = document.getElementById('userIdInput');
+
+    // Add an event listener to the entire document
+    document.addEventListener('click', (event) => {
+        // Check if the clicked element is the input field or not
+        if (userIdInput && !userIdInput.contains(event.target)) {
+            // If the input is active (focused), blur it when clicked outside
+            if (document.activeElement === userIdInput) {
+                userIdInput.blur();
+            }
+        }
+    });
+
     // Initialize grid
     function initializeGrid() {
         gridContainer.innerHTML = ''; // Clear the grid container
@@ -72,6 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500); // Delay of 500ms before revealing tiles again
         } else {
             revealRandomTiles();
+        }
+    });
+
+    const newGameButton = document.getElementById('newGameButton');
+    newGameButton.addEventListener('click', () => {
+        if (tilesRevealed) {
+            resetGrid(); // Reset the grid only if tiles have been revealed
         }
     });
 
